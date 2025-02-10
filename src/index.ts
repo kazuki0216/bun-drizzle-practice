@@ -1,9 +1,15 @@
-import { Hono } from 'hono'
+import { Hono } from "hono";
+import "dotenv/config";
+import { drizzle } from "drizzle-orm/libsql";
+import { db_seeding } from "./utils/db_connection";
 
-const app = new Hono()
+const db = drizzle(process.env.DB_FILE_NAME!);
 
-app.get('/', (c) => {
-  return c.text('Hello Hono!')
-})
+const app = new Hono();
 
-export default app
+app.get("/", (c) => {
+  db_seeding();
+  return c.text("Hello Hono!");
+});
+
+export default app;
