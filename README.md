@@ -1,3 +1,5 @@
+# bun-drizzle-practice
+Bun and Drizzle Practice
 To install dependencies:
 ```sh
 bun install
