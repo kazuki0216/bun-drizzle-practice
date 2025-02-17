@@ -13,4 +13,4 @@ COPY . .
 EXPOSE 3000
 
 # Start the Bun app
-CMD ["bun", "run", "src/index.ts"]
+CMD ["bun", "run", "src/app.tsx"]
